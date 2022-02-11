@@ -1,2 +1,3 @@
 rootProject.name = "jepconf"
 include "jepconf"
+include "jepconf-query"
