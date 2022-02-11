@@ -141,7 +141,7 @@ final class Types {
         invalidValuesExceptions.throwIfPresent();
     }
 
-    static Object normalizeObject(final Object object) {
+    static Object normalizeObject(final Object object, final boolean mutable) {
         if (isValidObjectInConfig(object)) {
             return object;
         } else if (object instanceof CharSequence) {
@@ -157,9 +157,17 @@ final class Types {
                 return (Long) ((Byte) object).longValue();
             }
         } else if (object instanceof Map) {
-            return ConfigMap.snapshotOfAnyMap((Map<?, ?>) object);
+            if (mutable) {
+                return ConfigMap.mutableSnapshotOfAnyMap((Map<?, ?>) object);
+            } else {
+                return ConfigMap.snapshotOfAnyMap((Map<?, ?>) object);
+            }
         } else if (object instanceof List) {
-            return ConfigList.snapshotOf((List<?>) object);
+            if (mutable) {
+                return ConfigList.mutableSnapshotOf((List<?>) object);
+            } else {
+                return ConfigList.snapshotOf((List<?>) object);
+            }
         }
         throw new IllegalArgumentException("The specified object cannot be normalized: " + object.getClass().toString());
     }

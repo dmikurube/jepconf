@@ -68,7 +68,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
      */
     @Deprecated
     public ConfigMap(final Map<String, ?> map) {
-        this(normalizeForInnerMap(Objects.requireNonNull(map, "The specified map is null.")), true);
+        this(normalizeForInnerMap(Objects.requireNonNull(map, "The specified map is null."), false), true);
     }
 
     /**
@@ -94,7 +94,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
             final String k1, final Object v1) {
         final LinkedHashMap<String, Object> inner = new LinkedHashMap<>();
         putSafe(inner, k1, v1);
-        return new ConfigMap(normalizeForInnerMap(inner), true);
+        return new ConfigMap(normalizeForInnerMap(inner, false), true);
     }
 
     /**
@@ -115,7 +115,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
         final LinkedHashMap<String, Object> inner = new LinkedHashMap<>();
         putSafe(inner, k1, v1);
         putSafe(inner, k2, v2);
-        return new ConfigMap(normalizeForInnerMap(inner), true);
+        return new ConfigMap(normalizeForInnerMap(inner, false), true);
     }
 
     /**
@@ -140,7 +140,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
         putSafe(inner, k1, v1);
         putSafe(inner, k2, v2);
         putSafe(inner, k3, v3);
-        return new ConfigMap(normalizeForInnerMap(inner), true);
+        return new ConfigMap(normalizeForInnerMap(inner, false), true);
     }
 
     /**
@@ -169,7 +169,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
         putSafe(inner, k2, v2);
         putSafe(inner, k3, v3);
         putSafe(inner, k4, v4);
-        return new ConfigMap(normalizeForInnerMap(inner), true);
+        return new ConfigMap(normalizeForInnerMap(inner, false), true);
     }
 
     /**
@@ -202,7 +202,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
         putSafe(inner, k3, v3);
         putSafe(inner, k4, v4);
         putSafe(inner, k5, v5);
-        return new ConfigMap(normalizeForInnerMap(inner), true);
+        return new ConfigMap(normalizeForInnerMap(inner, false), true);
     }
 
     /**
@@ -239,7 +239,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
         putSafe(inner, k4, v4);
         putSafe(inner, k5, v5);
         putSafe(inner, k6, v6);
-        return new ConfigMap(normalizeForInnerMap(inner), true);
+        return new ConfigMap(normalizeForInnerMap(inner, false), true);
     }
 
     /**
@@ -280,7 +280,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
         putSafe(inner, k5, v5);
         putSafe(inner, k6, v6);
         putSafe(inner, k7, v7);
-        return new ConfigMap(normalizeForInnerMap(inner), true);
+        return new ConfigMap(normalizeForInnerMap(inner, false), true);
     }
 
     /**
@@ -325,7 +325,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
         putSafe(inner, k6, v6);
         putSafe(inner, k7, v7);
         putSafe(inner, k8, v8);
-        return new ConfigMap(normalizeForInnerMap(inner), true);
+        return new ConfigMap(normalizeForInnerMap(inner, false), true);
     }
 
     /**
@@ -374,7 +374,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
         putSafe(inner, k7, v7);
         putSafe(inner, k8, v8);
         putSafe(inner, k9, v9);
-        return new ConfigMap(normalizeForInnerMap(inner), true);
+        return new ConfigMap(normalizeForInnerMap(inner, false), true);
     }
 
     /**
@@ -427,7 +427,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
         putSafe(inner, k8, v8);
         putSafe(inner, k9, v9);
         putSafe(inner, k10, v10);
-        return new ConfigMap(normalizeForInnerMap(inner), true);
+        return new ConfigMap(normalizeForInnerMap(inner, false), true);
     }
 
     /**
@@ -448,7 +448,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
         for (final Map.Entry<String, ?> entry : entries) {
             putSafe(inner, entry.getKey(), (Object) entry.getValue());
         }
-        return new ConfigMap(normalizeForInnerMap(inner), true);
+        return new ConfigMap(normalizeForInnerMap(inner, false), true);
     }
 
     /**
@@ -465,12 +465,33 @@ public final class ConfigMap extends AbstractMap<String, Object> {
         if (map instanceof ConfigMap) {
             return castAnyMapToConfigMap(map);
         }
-        return new ConfigMap(normalizeForInnerMap(map), true);
+        return new ConfigMap(normalizeForInnerMap(map, false), true);
+    }
+
+    /**
+     * Returns a new mutable {@link java.util.LinkedHashMap} with normalized deep copies of the same mappings as the specified {@link java.util.Map}.
+     *
+     * <p>Although it returns a mutable {@link java.util.LinkedHashMap}, it applies the same validation with {@link dev.jigue.jepconf.ConfigMap}.
+     *
+     * @param map  the {@link java.util.Map} whose mappings are to be placed in this {@link java.util.LinkedHashMap}, not null
+     * @return a {@link java.util.LinkedHashMap} containing normalized deep copies of the specified mapping
+     * @throws IllegalArgumentException  if the specified {@link java.util.Map} contains at least one invalid key or value
+     *     for {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
+     * @throws NullPointerException  if the specified {@link java.util.Map} is {@code null}
+     */
+    public static LinkedHashMap<String, Object> mutableSnapshotOf(final Map<String, ?> map) {
+        Objects.requireNonNull(map, "The specified map is null.");
+        return normalizeForInnerMap(map, true);
     }
 
     @SuppressWarnings("unchecked")
     static ConfigMap snapshotOfAnyMap(final Map<?, ?> map) {
         return snapshotOf((Map<String, ?>) map);
+    }
+
+    @SuppressWarnings("unchecked")
+    static LinkedHashMap<String, Object> mutableSnapshotOfAnyMap(final Map<?, ?> map) {
+        return mutableSnapshotOf((Map<String, ?>) map);
     }
 
     /**
@@ -488,11 +509,11 @@ public final class ConfigMap extends AbstractMap<String, Object> {
         return (ConfigMap) map;
     }
 
-    private static LinkedHashMap<String, Object> normalizeForInnerMap(final Map<String, ?> map) {
+    private static LinkedHashMap<String, Object> normalizeForInnerMap(final Map<String, ?> map, final boolean mutable) {
         assertForInnerMap(map);
         final LinkedHashMap<String, Object> inner = new LinkedHashMap<>();
         for (final Map.Entry<String, ?> entry : map.entrySet()) {
-            inner.put(entry.getKey(), Types.normalizeObject(entry.getValue()));
+            inner.put(entry.getKey(), Types.normalizeObject(entry.getValue(), mutable));
         }
         return inner;
     }
