@@ -57,9 +57,9 @@ public final class ConfigMap extends AbstractMap<String, Object> {
     }
 
     /**
-     * Constructs a new {@link dev.jigue.jepconf.ConfigMap} with the same mappings as the specified {@link java.util.Map}.
+     * Constructs a {@link dev.jigue.jepconf.ConfigMap} with normalized and deep-copied mappings of the specified {@link java.util.Map}.
      *
-     * @param map  the {@link java.util.Map} whose mappings are to be placed in this {@link dev.jigue.jepconf.ConfigMap}, not null
+     * @param map  the {@link java.util.Map} whose normalized and deep-copied mappings are to be placed in this {@link dev.jigue.jepconf.ConfigMap}, not null
      * @throws IllegalArgumentException  if the specified {@link java.util.Map} contains an invalid key or value for
      *     {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      * @throws NullPointerException  if the specified {@link java.util.Map} is {@code null}
@@ -72,7 +72,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigMap} containing zero mappings.
+     * Returns a new {@link dev.jigue.jepconf.ConfigMap} containing zero mappings.
      *
      * @return an empty {@link dev.jigue.jepconf.ConfigMap}
      */
@@ -81,11 +81,11 @@ public final class ConfigMap extends AbstractMap<String, Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigMap} containing a single mapping.
+     * Returns a new {@link dev.jigue.jepconf.ConfigMap} containing a normalized deep copy of the specified single mapping.
      *
      * @param k1  the mapping's key, not null
      * @param v1  the mapping's value
-     * @return a {@link dev.jigue.jepconf.ConfigMap} containing the specified mapping
+     * @return a {@link dev.jigue.jepconf.ConfigMap} containing a normalized deep copy of the specified mapping
      * @throws IllegalArgumentException  if the specified key or value is invalid for
      *     {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      * @throws NullPointerException  if the key is {@code null}
@@ -98,13 +98,13 @@ public final class ConfigMap extends AbstractMap<String, Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigMap} containing two mappings.
+     * Returns a new {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified two mappings.
      *
      * @param k1 the first mapping's key, not null
      * @param v1 the first mapping's value
      * @param k2 the second mapping's key, not null
      * @param v2 the second mapping's value
-     * @return a {@link dev.jigue.jepconf.ConfigMap} containing the specified mapping
+     * @return a {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified mappings
      * @throws IllegalArgumentException  if the keys are duplicates, or if at least one of the specified keys and values are
      *     invalid for {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      * @throws NullPointerException  if any key is {@code null}
@@ -119,7 +119,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigMap} containing three mappings.
+     * Returns a new {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified three mappings.
      *
      * @param k1 the first mapping's key, not null
      * @param v1 the first mapping's value
@@ -127,7 +127,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
      * @param v2 the second mapping's value
      * @param k3 the third mapping's key, not null
      * @param v3 the third mapping's value
-     * @return a {@link dev.jigue.jepconf.ConfigMap} containing the specified mapping
+     * @return a {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified mappings
      * @throws IllegalArgumentException  if the keys are duplicates, or if at least one of the specified keys and values are
      *     invalid for {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      * @throws NullPointerException  if any key is {@code null}
@@ -144,7 +144,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigMap} containing four mappings.
+     * Returns a new {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified four mappings.
      *
      * @param k1 the first mapping's key, not null
      * @param v1 the first mapping's value
@@ -154,7 +154,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
      * @param v3 the third mapping's value
      * @param k4 the fourth mapping's key, not null
      * @param v4 the fourth mapping's value
-     * @return a {@link dev.jigue.jepconf.ConfigMap} containing the specified mapping
+     * @return a {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified mappings
      * @throws IllegalArgumentException  if the keys are duplicates, or if at least one of the specified keys and values are
      *     invalid for {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      * @throws NullPointerException  if any key is {@code null}
@@ -173,7 +173,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigMap} containing five mappings.
+     * Returns a new {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified five mappings.
      *
      * @param k1 the first mapping's key, not null
      * @param v1 the first mapping's value
@@ -185,7 +185,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
      * @param v4 the fourth mapping's value
      * @param k5 the fifth mapping's key, not null
      * @param v5 the fifth mapping's value
-     * @return a {@link dev.jigue.jepconf.ConfigMap} containing the specified mapping
+     * @return a {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified mappings
      * @throws IllegalArgumentException  if the keys are duplicates, or if at least one of the specified keys and values are
      *     invalid for {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      * @throws NullPointerException  if any key is {@code null}
@@ -206,7 +206,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigMap} containing six mappings.
+     * Returns a new {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified six mappings.
      *
      * @param k1 the first mapping's key, not null
      * @param v1 the first mapping's value
@@ -220,7 +220,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
      * @param v5 the fifth mapping's value
      * @param k6 the sixth mapping's key, not null
      * @param v6 the sixth mapping's value
-     * @return a {@link dev.jigue.jepconf.ConfigMap} containing the specified mapping
+     * @return a {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified mappings
      * @throws IllegalArgumentException  if the keys are duplicates, or if at least one of the specified keys and values are
      *     invalid for {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      * @throws NullPointerException  if any key is {@code null}
@@ -243,7 +243,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigMap} containing seven mappings.
+     * Returns a new {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified seven mappings.
      *
      * @param k1 the first mapping's key, not null
      * @param v1 the first mapping's value
@@ -259,7 +259,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
      * @param v6 the sixth mapping's value
      * @param k7 the seventh mapping's key, not null
      * @param v7 the seventh mapping's value
-     * @return a {@link dev.jigue.jepconf.ConfigMap} containing the specified mapping
+     * @return a {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified mappings
      * @throws IllegalArgumentException  if the keys are duplicates, or if at least one of the specified keys and values are
      *     invalid for {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      * @throws NullPointerException  if any key is {@code null}
@@ -284,7 +284,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigMap} containing eight mappings.
+     * Returns a new {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified eight mappings.
      *
      * @param k1 the first mapping's key, not null
      * @param v1 the first mapping's value
@@ -302,7 +302,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
      * @param v7 the seventh mapping's value
      * @param k8 the eighth mapping's key, not null
      * @param v8 the eighth mapping's value
-     * @return a {@link dev.jigue.jepconf.ConfigMap} containing the specified mapping
+     * @return a {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified mappings
      * @throws IllegalArgumentException  if the keys are duplicates, or if at least one of the specified keys and values are
      *     invalid for {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      * @throws NullPointerException  if any key is {@code null}
@@ -329,7 +329,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigMap} containing nine mappings.
+     * Returns a new {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified nine mappings.
      *
      * @param k1 the first mapping's key, not null
      * @param v1 the first mapping's value
@@ -349,7 +349,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
      * @param v8 the eighth mapping's value
      * @param k9 the ninth mapping's key, not null
      * @param v9 the ninth mapping's value
-     * @return a {@link dev.jigue.jepconf.ConfigMap} containing the specified mapping
+     * @return a {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified mappings
      * @throws IllegalArgumentException  if the keys are duplicates, or if at least one of the specified keys and values are
      *     invalid for {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      * @throws NullPointerException  if any key is {@code null}
@@ -378,7 +378,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigMap} containing ten mappings.
+     * Returns a new {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified ten mappings.
      *
      * @param k1 the first mapping's key, not null
      * @param v1 the first mapping's value
@@ -400,7 +400,7 @@ public final class ConfigMap extends AbstractMap<String, Object> {
      * @param v9 the ninth mapping's value
      * @param k10 the tenth mapping's key, not null
      * @param v10 the tenth mapping's value
-     * @return a {@link dev.jigue.jepconf.ConfigMap} containing the specified mapping
+     * @return a {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified mappings
      * @throws IllegalArgumentException  if the keys are duplicates, or if at least one of the specified keys and values are
      *     invalid for {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      * @throws NullPointerException  if any key is {@code null}
@@ -431,11 +431,10 @@ public final class ConfigMap extends AbstractMap<String, Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigMap} containing keys and values extracted from the given entries.
-     * The entries themselves are not stored in the map.
+     * Returns a new {@link dev.jigue.jepconf.ConfigMap} containing normalized and deep-copied keys and values extracted from the given entries.
      *
-     * @param entries  {@link java.util.Map.Entry}s containing the keys and values from which the map is populated, not null
-     * @return a {@link dev.jigue.jepconf.ConfigMap} containing the specified mappings
+     * @param entries  {@link java.util.Map.Entry}s containing normalized and deep-copied keys and values from which the map is populated, not null
+     * @return a {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified mappings
      * @throws IllegalArgumentException  if there are any duplicate keys, or if at least one of the specified entries contain
      *     an invalid key or value for {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      * @throws NullPointerException  if the array or any key is {@code null}
@@ -452,10 +451,10 @@ public final class ConfigMap extends AbstractMap<String, Object> {
     }
 
     /**
-     * Returns a new {@link dev.jigue.jepconf.ConfigMap} with the same mappings as the specified {@link java.util.Map}.
+     * Returns a new {@link dev.jigue.jepconf.ConfigMap} with normalized and deep-copied mappings of the specified {@link java.util.Map}.
      *
-     * @param map  the {@link java.util.Map} whose mappings are to be placed in this {@link dev.jigue.jepconf.ConfigMap}, not null
-     * @return a {@link dev.jigue.jepconf.ConfigMap} containing the specified mapping
+     * @param map  the {@link java.util.Map} whose normalized and deep-copied mappings are to be placed in this {@link dev.jigue.jepconf.ConfigMap}, not null
+     * @return a {@link dev.jigue.jepconf.ConfigMap} containing normalized deep copies of the specified mapping
      * @throws IllegalArgumentException  if the specified {@link java.util.Map} contains at least one invalid key or value
      *     for {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      * @throws NullPointerException  if the specified {@link java.util.Map} is {@code null}
@@ -469,11 +468,11 @@ public final class ConfigMap extends AbstractMap<String, Object> {
     }
 
     /**
-     * Returns a new mutable {@link java.util.LinkedHashMap} with normalized deep copies of the same mappings as the specified {@link java.util.Map}.
+     * Returns a new mutable {@link java.util.LinkedHashMap} with normalized and deep-copied mappings of the specified {@link java.util.Map}.
      *
      * <p>Although it returns a mutable {@link java.util.LinkedHashMap}, it applies the same validation with {@link dev.jigue.jepconf.ConfigMap}.
      *
-     * @param map  the {@link java.util.Map} whose mappings are to be placed in this {@link java.util.LinkedHashMap}, not null
+     * @param map  the {@link java.util.Map} whose normalized and deep-copied mappings are to be placed in this {@link java.util.LinkedHashMap}, not null
      * @return a {@link java.util.LinkedHashMap} containing normalized deep copies of the specified mapping
      * @throws IllegalArgumentException  if the specified {@link java.util.Map} contains at least one invalid key or value
      *     for {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}

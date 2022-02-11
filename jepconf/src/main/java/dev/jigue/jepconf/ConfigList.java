@@ -50,7 +50,7 @@ public final class ConfigList extends AbstractList<Object> {
     }
 
     /**
-     * Constructs a new {@link dev.jigue.jepconf.ConfigList} containing the elements of the specified {@link java.util.List}.
+     * Constructs a {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the elements of the specified {@link java.util.List}.
      *
      * @param list  the {@link java.util.List} whose elements are to be placed into this {@link dev.jigue.jepconf.ConfigList}, not null
      * @throws IllegalArgumentException  if the specified {@link java.util.List} contains an invalid element for
@@ -65,7 +65,7 @@ public final class ConfigList extends AbstractList<Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigList} containing zero elements.
+     * Returns a new {@link dev.jigue.jepconf.ConfigList} containing zero elements.
      *
      * @return an empty {@link dev.jigue.jepconf.ConfigList}
      */
@@ -74,10 +74,10 @@ public final class ConfigList extends AbstractList<Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigList} containing one element.
+     * Returns a new {@link dev.jigue.jepconf.ConfigList} containing a normalized deep copy of the specified one element.
      *
      * @param e1 the single element
-     * @return a {@link dev.jigue.jepconf.ConfigList} containing the specified element
+     * @return a {@link dev.jigue.jepconf.ConfigList} containing a normalized deep copy of the specified element
      * @throws IllegalArgumentException  if the specified {@link java.lang.Object} is invalid for
      *     {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      */
@@ -89,11 +89,11 @@ public final class ConfigList extends AbstractList<Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigList} containing two elements.
+     * Returns a new {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified two elements.
      *
      * @param e1 the first element
      * @param e2 the second element
-     * @return a {@link dev.jigue.jepconf.ConfigList} containing the specified elements
+     * @return a {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified elements
      * @throws IllegalArgumentException  if at least one of the specified {@link java.lang.Object} is invalid for
      *     {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      */
@@ -107,12 +107,12 @@ public final class ConfigList extends AbstractList<Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigList} containing three elements.
+     * Returns a new {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified three elements.
      *
      * @param e1 the first element
      * @param e2 the second element
      * @param e3 the third element
-     * @return a {@link dev.jigue.jepconf.ConfigList} containing the specified elements
+     * @return a {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified elements
      * @throws IllegalArgumentException  if at least one of the specified {@link java.lang.Object} is invalid for
      *     {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      */
@@ -128,13 +128,13 @@ public final class ConfigList extends AbstractList<Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigList} containing four elements.
+     * Returns a new {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified four elements.
      *
      * @param e1 the first element
      * @param e2 the second element
      * @param e3 the third element
      * @param e4 the fourth element
-     * @return a {@link dev.jigue.jepconf.ConfigList} containing the specified elements
+     * @return a {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified elements
      * @throws IllegalArgumentException  if at least one of the specified {@link java.lang.Object} is invalid for
      *     {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      */
@@ -152,14 +152,14 @@ public final class ConfigList extends AbstractList<Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigList} containing five elements.
+     * Returns a new {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified five elements.
      *
      * @param e1 the first element
      * @param e2 the second element
      * @param e3 the third element
      * @param e4 the fourth element
      * @param e5 the fifth element
-     * @return a {@link dev.jigue.jepconf.ConfigList} containing the specified elements
+     * @return a {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified elements
      * @throws IllegalArgumentException  if at least one of the specified {@link java.lang.Object} is invalid for
      *     {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      */
@@ -179,7 +179,7 @@ public final class ConfigList extends AbstractList<Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigList} containing six elements.
+     * Returns a new {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified six elements.
      *
      * @param e1 the first element
      * @param e2 the second element
@@ -187,7 +187,7 @@ public final class ConfigList extends AbstractList<Object> {
      * @param e4 the fourth element
      * @param e5 the fifth element
      * @param e6 the sixth element
-     * @return a {@link dev.jigue.jepconf.ConfigList} containing the specified elements
+     * @return a {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified elements
      * @throws IllegalArgumentException  if at least one of the specified {@link java.lang.Object} is invalid for
      *     {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      */
@@ -209,7 +209,7 @@ public final class ConfigList extends AbstractList<Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigList} containing seven elements.
+     * Returns a new {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified seven elements.
      *
      * @param e1 the first element
      * @param e2 the second element
@@ -218,7 +218,7 @@ public final class ConfigList extends AbstractList<Object> {
      * @param e5 the fifth element
      * @param e6 the sixth element
      * @param e7 the seventh element
-     * @return a {@link dev.jigue.jepconf.ConfigList} containing the specified elements
+     * @return a {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified elements
      * @throws IllegalArgumentException  if at least one of the specified {@link java.lang.Object} is invalid for
      *     {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      */
@@ -242,7 +242,7 @@ public final class ConfigList extends AbstractList<Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigList} containing eight elements.
+     * Returns a new {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified eight elements.
      *
      * @param e1 the first element
      * @param e2 the second element
@@ -252,7 +252,7 @@ public final class ConfigList extends AbstractList<Object> {
      * @param e6 the sixth element
      * @param e7 the seventh element
      * @param e8 the eighth element
-     * @return a {@link dev.jigue.jepconf.ConfigList} containing the specified elements
+     * @return a {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified elements
      * @throws IllegalArgumentException  if at least one of the specified {@link java.lang.Object} is invalid for
      *     {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      */
@@ -278,7 +278,7 @@ public final class ConfigList extends AbstractList<Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigList} containing nine elements.
+     * Returns a new {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified nine elements.
      *
      * @param e1 the first element
      * @param e2 the second element
@@ -289,7 +289,7 @@ public final class ConfigList extends AbstractList<Object> {
      * @param e7 the seventh element
      * @param e8 the eighth element
      * @param e9 the ninth element
-     * @return a {@link dev.jigue.jepconf.ConfigList} containing the specified elements
+     * @return a {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified elements
      * @throws IllegalArgumentException  if at least one of the specified {@link java.lang.Object} is invalid for
      *     {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      */
@@ -317,7 +317,7 @@ public final class ConfigList extends AbstractList<Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigList} containing ten elements.
+     * Returns a new {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of specified ten elements.
      *
      * @param e1 the first element
      * @param e2 the second element
@@ -329,7 +329,7 @@ public final class ConfigList extends AbstractList<Object> {
      * @param e8 the eighth element
      * @param e9 the ninth element
      * @param e10 the tenth element
-     * @return a {@link dev.jigue.jepconf.ConfigList} containing the specified elements
+     * @return a {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified elements
      * @throws IllegalArgumentException  if at least one of the specified {@link java.lang.Object} is invalid for
      *     {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      */
@@ -359,10 +359,10 @@ public final class ConfigList extends AbstractList<Object> {
     }
 
     /**
-     * Returns a {@link dev.jigue.jepconf.ConfigList} containing an arbitrary number of elements.
+     * Returns a new {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of an arbitrary number of the specified elements.
      *
-     * @param elements  the elements to be contained in the {@link dev.jigue.jepconf.ConfigList}, not null
-     * @return a {@link dev.jigue.jepconf.ConfigList} containing the specified elements
+     * @param elements  the elements whose normalized deep copies are to be contained in the {@link dev.jigue.jepconf.ConfigList}, not null
+     * @return a {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified elements
      * @throws IllegalArgumentException  if at least one of the specified {@link java.lang.Object} is invalid for
      *     {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      * @throws NullPointerException  if the array is {@code null}
@@ -377,10 +377,10 @@ public final class ConfigList extends AbstractList<Object> {
     }
 
     /**
-     * Returns a new {@link dev.jigue.jepconf.ConfigList} containing the elements of the specified {@link java.util.List}.
+     * Returns a new {@link dev.jigue.jepconf.ConfigList} containing normalized and deep-copied elements of the specified {@link java.util.List}.
      *
-     * @param list  the {@link java.util.List} whose elements are to be placed into this {@link dev.jigue.jepconf.ConfigList}, not null
-     * @return a {@link dev.jigue.jepconf.ConfigList} containing the specified elements
+     * @param list  the {@link java.util.List} whose normalized and deep-copied elements are to be placed into this {@link dev.jigue.jepconf.ConfigList}, not null
+     * @return a {@link dev.jigue.jepconf.ConfigList} containing normalized deep copies of the specified elements
      * @throws IllegalArgumentException  if the specified {@link java.util.List} contains an invalid element for
      *     {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
      * @throws NullPointerException  if the specified {@link java.util.List} is {@code null}
@@ -394,11 +394,11 @@ public final class ConfigList extends AbstractList<Object> {
     }
 
     /**
-     * Returns a new mutable {@link java.util.ArrayList} containing normalized deep copies of the elements of the specified {@link java.util.List}.
+     * Returns a new mutable {@link java.util.ArrayList} containing normalized and deep-copied elements of the specified {@link java.util.List}.
      *
      * <p>Although it returns a mutable {@link java.util.ArrayList}, it applies the same validation with {@link dev.jigue.jepconf.ConfigList}.
      *
-     * @param list  the {@link java.util.List} whose elements are to be placed into this {@link java.util.ArrayList}, not null
+     * @param list  the {@link java.util.List} whose normalized and deep-copied elements are to be placed into this {@link java.util.ArrayList}, not null
      * @return a {@link java.util.ArrayList} containing normalized deep copies of the specified elements
      * @throws IllegalArgumentException  if the specified {@link java.util.List} contains an invalid element for
      *     {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
