@@ -213,7 +213,8 @@ final class Types {
      * Returns true if the specified Object is valid directly in ConfigList or ConfigMap.
      */
     private static boolean isValidObjectInConfig(final Object object) {
-        return object instanceof String  // final
+        return object == null  // null is considered valid as a value (not for a key).
+                || object instanceof String  // final
                 || object instanceof Long  // final
                 || object instanceof Double  // final
                 || object instanceof Boolean  // final
