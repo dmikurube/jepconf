@@ -61,7 +61,7 @@ public final class ConfigList extends AbstractList<Object> {
      */
     @Deprecated
     public ConfigList(final List<?> list) {
-        this(normalizeForInnerList(Objects.requireNonNull(list, "The specified list is null.")), true);
+        this(normalizeForInnerList(Objects.requireNonNull(list, "The specified list is null."), false), true);
     }
 
     /**
@@ -85,7 +85,7 @@ public final class ConfigList extends AbstractList<Object> {
             final Object e1) {
         final ArrayList<Object> inner = new ArrayList<>();
         inner.add(e1);
-        return new ConfigList(normalizeForInnerList(inner), true);
+        return new ConfigList(normalizeForInnerList(inner, false), true);
     }
 
     /**
@@ -103,7 +103,7 @@ public final class ConfigList extends AbstractList<Object> {
         final ArrayList<Object> inner = new ArrayList<>();
         inner.add(e1);
         inner.add(e2);
-        return new ConfigList(normalizeForInnerList(inner), true);
+        return new ConfigList(normalizeForInnerList(inner, false), true);
     }
 
     /**
@@ -124,7 +124,7 @@ public final class ConfigList extends AbstractList<Object> {
         inner.add(e1);
         inner.add(e2);
         inner.add(e3);
-        return new ConfigList(normalizeForInnerList(inner), true);
+        return new ConfigList(normalizeForInnerList(inner, false), true);
     }
 
     /**
@@ -148,7 +148,7 @@ public final class ConfigList extends AbstractList<Object> {
         inner.add(e2);
         inner.add(e3);
         inner.add(e4);
-        return new ConfigList(normalizeForInnerList(inner), true);
+        return new ConfigList(normalizeForInnerList(inner, false), true);
     }
 
     /**
@@ -175,7 +175,7 @@ public final class ConfigList extends AbstractList<Object> {
         inner.add(e3);
         inner.add(e4);
         inner.add(e5);
-        return new ConfigList(normalizeForInnerList(inner), true);
+        return new ConfigList(normalizeForInnerList(inner, false), true);
     }
 
     /**
@@ -205,7 +205,7 @@ public final class ConfigList extends AbstractList<Object> {
         inner.add(e4);
         inner.add(e5);
         inner.add(e6);
-        return new ConfigList(normalizeForInnerList(inner), true);
+        return new ConfigList(normalizeForInnerList(inner, false), true);
     }
 
     /**
@@ -238,7 +238,7 @@ public final class ConfigList extends AbstractList<Object> {
         inner.add(e5);
         inner.add(e6);
         inner.add(e7);
-        return new ConfigList(normalizeForInnerList(inner), true);
+        return new ConfigList(normalizeForInnerList(inner, false), true);
     }
 
     /**
@@ -274,7 +274,7 @@ public final class ConfigList extends AbstractList<Object> {
         inner.add(e6);
         inner.add(e7);
         inner.add(e8);
-        return new ConfigList(normalizeForInnerList(inner), true);
+        return new ConfigList(normalizeForInnerList(inner, false), true);
     }
 
     /**
@@ -313,7 +313,7 @@ public final class ConfigList extends AbstractList<Object> {
         inner.add(e7);
         inner.add(e8);
         inner.add(e9);
-        return new ConfigList(normalizeForInnerList(inner), true);
+        return new ConfigList(normalizeForInnerList(inner, false), true);
     }
 
     /**
@@ -355,7 +355,7 @@ public final class ConfigList extends AbstractList<Object> {
         inner.add(e8);
         inner.add(e9);
         inner.add(e10);
-        return new ConfigList(normalizeForInnerList(inner), true);
+        return new ConfigList(normalizeForInnerList(inner, false), true);
     }
 
     /**
@@ -373,7 +373,7 @@ public final class ConfigList extends AbstractList<Object> {
         for (final Object element : elements) {
             inner.add(element);
         }
-        return new ConfigList(normalizeForInnerList(inner), true);
+        return new ConfigList(normalizeForInnerList(inner, false), true);
     }
 
     /**
@@ -390,7 +390,23 @@ public final class ConfigList extends AbstractList<Object> {
         if (list instanceof ConfigList) {
             return castAnyListToConfigList(list);
         }
-        return new ConfigList(normalizeForInnerList(list), true);
+        return new ConfigList(normalizeForInnerList(list, false), true);
+    }
+
+    /**
+     * Returns a new mutable {@link java.util.ArrayList} containing normalized deep copies of the elements of the specified {@link java.util.List}.
+     *
+     * <p>Although it returns a mutable {@link java.util.ArrayList}, it applies the same validation with {@link dev.jigue.jepconf.ConfigList}.
+     *
+     * @param list  the {@link java.util.List} whose elements are to be placed into this {@link java.util.ArrayList}, not null
+     * @return a {@link java.util.ArrayList} containing normalized deep copies of the specified elements
+     * @throws IllegalArgumentException  if the specified {@link java.util.List} contains an invalid element for
+     *     {@link dev.jigue.jepconf.ConfigList} and {@link dev.jigue.jepconf.ConfigMap}
+     * @throws NullPointerException  if the specified {@link java.util.List} is {@code null}
+     */
+    public static ArrayList<Object> mutableSnapshotOf(final List<?> list) {
+        Objects.requireNonNull(list, "The specified list is null.");
+        return normalizeForInnerList(list, true);
     }
 
     /**
@@ -423,11 +439,11 @@ public final class ConfigList extends AbstractList<Object> {
         return (ConfigList) list;
     }
 
-    private static ArrayList<Object> normalizeForInnerList(final List<?> list) {
+    private static ArrayList<Object> normalizeForInnerList(final List<?> list, final boolean mutable) {
         assertForInnerList(list);
         final ArrayList<Object> inner = new ArrayList<>();
         for (final Object element : list) {
-            inner.add(Types.normalizeObject(element));
+            inner.add(Types.normalizeObject(element, mutable));
         }
         return inner;
     }

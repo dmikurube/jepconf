@@ -21,7 +21,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import org.junit.jupiter.api.Test;
 
 public class TestConfigList {
@@ -116,6 +119,33 @@ public class TestConfigList {
             return;
         }
         fail("No expected Exception is thrown.");
+    }
+
+    @Test
+    public void testMutable() {
+        final List<Object> innerList = new ArrayList<>();
+        innerList.add("foo");
+        innerList.add(12L);
+        innerList.add(123.456d);
+        final Map<String, Object> innerMap = new HashMap<>();
+        innerMap.put("foo", "text");
+        innerMap.put("bar", innerList);
+        innerMap.put("baz", "text");
+        final List<Object> list = new ArrayList<>();
+        list.add("foo");
+        list.add(12L);
+        list.add(innerMap);
+        list.add(123.456d);
+
+        final ConfigList actualImmutable = ConfigList.snapshotOf(castList(list));
+        assertEquals(ConfigList.class, actualImmutable.getClass());
+        assertEquals(ConfigMap.class, actualImmutable.get(2).getClass());
+        assertEquals(ConfigList.class, ((Map<?, ?>) actualImmutable.get(2)).get("bar").getClass());
+
+        final ArrayList<Object> actualMutable = ConfigList.mutableSnapshotOf(castList(list));
+        assertEquals(ArrayList.class, actualMutable.getClass());
+        assertEquals(LinkedHashMap.class, actualMutable.get(2).getClass());
+        assertEquals(ArrayList.class, ((Map<?, ?>) actualMutable.get(2)).get("bar").getClass());
     }
 
     private static ConfigList assertConfigList(final List<? extends Object> list) {
